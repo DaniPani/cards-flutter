@@ -1,0 +1,91 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter packages get
+
+## exception
+
+YamlException: Error on line 22, column 18: Mapping values are not allowed here. Did you miss a colon earlier?
+    english_words: ^3.1.0
+                 ^
+
+```
+#0      Scanner._fetchValue (package:yaml/src/scanner.dart:713:9)
+#1      Scanner._fetchNextToken (package:yaml/src/scanner.dart:457:11)
+#2      Scanner._fetchMoreTokens (package:yaml/src/scanner.dart:339:7)
+#3      Scanner.peek (package:yaml/src/scanner.dart:317:27)
+#4      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:418:26)
+#5      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#6      Parser.parse (package:yaml/src/parser.dart:47:19)
+#7      Loader._loadMapping (package:yaml/src/loader.dart:171:23)
+#8      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#9      Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#10     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#11     Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#12     Loader.load (package:yaml/src/loader.dart:54:20)
+#13     loadYamlDocument (package:yaml/yaml.dart:51:25)
+#14     loadYamlNode (package:yaml/yaml.dart:42:5)
+#15     loadYaml (package:yaml/yaml.dart:34:5)
+#16     FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:42:28)
+<asynchronous suspension>
+#17     FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:36:12)
+<asynchronous suspension>
+#18     FlutterProject._readManifest (package:flutter_tools/src/project.dart:128:60)
+<asynchronous suspension>
+#19     FlutterProject.fromDirectory (package:flutter_tools/src/project.dart:42:44)
+<asynchronous suspension>
+#20     FlutterProject.fromPath (package:flutter_tools/src/project.dart:57:58)
+#21     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:83:61)
+<asynchronous suspension>
+#22     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:372:18)
+#23     _asyncThenWrapperHelper.<anonymous closure> (dart:async/runtime/libasync_patch.dart:77:64)
+#24     _rootRunUnary (dart:async/zone.dart:1132:38)
+#25     _CustomZone.runUnary (dart:async/zone.dart:1029:19)
+#26     _FutureListener.handleValue (dart:async/future_impl.dart:129:18)
+#27     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:642:45)
+#28     Future._propagateToListeners (dart:async/future_impl.dart:671:32)
+#29     Future._complete (dart:async/future_impl.dart:476:7)
+#30     _SyncCompleter.complete (dart:async/future_impl.dart:51:12)
+#31     _AsyncAwaitCompleter.complete.<anonymous closure> (dart:async/runtime/libasync_patch.dart:33:20)
+#32     _rootRun (dart:async/zone.dart:1124:13)
+#33     _CustomZone.run (dart:async/zone.dart:1021:19)
+#34     _CustomZone.bindCallback.<anonymous closure> (dart:async/zone.dart:947:23)
+#35     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#36     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#37     _runPendingImmediateCallback (dart:isolate/runtime/libisolate_patch.dart:115:13)
+#38     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:172:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.8.2, on Microsoft Windows [Versione 10.0.17760.1], locale it-CH)
+    • Flutter version 0.8.2 at D:\flutter
+    • Framework revision 5ab9e70727 (2 weeks ago), 2018-09-07 12:33:05 -0700
+    • Engine revision 58a1894a1c
+    • Dart version 2.1.0-dev.3.1.flutter-760a9690c2
+
+[✓] Android toolchain - develop for Android devices (Android SDK 28.0.2)
+    • Android SDK at C:\Users\paner\AppData\Local\Android\sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.2
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin version 28.0.1
+    • Dart plugin version 173.4700
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b02)
+
+[✓] VS Code (version 1.27.2)
+    • VS Code at C:\Users\paner\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 2.18.0
+
+[✓] Connected devices (1 available)
+    • Android SDK built for x86 • emulator-5554 • android-x86 • Android 9 (API 28) (emulator)
+
+• No issues found!
+```
